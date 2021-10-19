@@ -1,15 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { SafeAreaView,StyleSheet, Text,TextInput } from 'react-native';
+import { BottomNavigation} from 'react-native-paper';
+import movRoute from './components/movRoute.js';
+import inicio from'./components/inicio.js';
+import vehiculo from './components/vehiculos.js';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const App = () => {
+  const [index, setIndex] = React.useState(0);
+  const [routes] = React.useState
+  ([
+    { key: 'sesion', title: 'Iniciar Sesión', icon: 'login' },
+    { key: 'ruta', title: 'Rutas', icon: 'routes'},
+    { key: 'vehiculo', title: 'Veiculos', icon: 'car' },
+  ]);
+
+const redireccion = BottomNavigation.SceneMap({
+  sesion: inicio,
+  ruta: movRoute,
+  vehiculo: vehiculo,
+});
+
+return (
+  <BottomNavigation
+    navigationState={{ index, routes }}
+    onIndexChange={setIndex}
+    renderScene={redireccion}
+  />
+);
+};
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
