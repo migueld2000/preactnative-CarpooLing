@@ -3,7 +3,7 @@ import { SafeAreaView,StyleSheet, Text,TextInput } from 'react-native';
 import { BottomNavigation} from 'react-native-paper';
 import movRoute from './components/movRoute.js';
 import inicio from'./components/inicio.js';
-import vehiculo from './components/vehiculos.js';
+import Calificacion from './components/calificacion.js';
 
   const App = () => {
   const [index, setIndex] = React.useState(0);
@@ -11,13 +11,13 @@ import vehiculo from './components/vehiculos.js';
   ([
     { key: 'sesion', title: 'Iniciar Sesión', icon: 'login' },
     { key: 'ruta', title: 'Rutas', icon: 'routes'},
-    { key: 'vehiculo', title: 'Veiculos', icon: 'car' },
+    { key: 'calificacion', title: 'Calificacion', icon: 'car' },
   ]);
 
 const redireccion = BottomNavigation.SceneMap({
   sesion: inicio,
   ruta: movRoute,
-  vehiculo: vehiculo,
+  calificacion: Calificacion,
 });
 
 return (
