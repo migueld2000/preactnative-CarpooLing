@@ -12,7 +12,7 @@ const vehiculo = () => {
       <Text>vehiculos<hr /></Text>
       <View style={{ flexDirection: 'row' }}>
         <View style={styles.imagen}>
-          <ImageBackground source={imagen1} resizeMode="cover" style={styles.imagen} />
+          <ImageBackground socure={imagen1} resizeMode="cover" style={styles.imagen} />
           <Text>{"\n"}</Text>
           <Text style={styles.container}> Propietario:</Text>
           <Text>{"\n"}</Text>
